@@ -10,8 +10,10 @@ export default function Support() {
 		flex
 		flex-1
 		">
-			<h1>Support</h1>
-			<p>This area is for mental health support   </p>
+			<div>
+				<h1>Support</h1>
+				<p>This area is for mental health support   </p>
+			</div>
 		</div>
 	);
 }

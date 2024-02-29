@@ -11,8 +11,10 @@ export default function Help() {
 		flex
 		flex-1
 		">
-			<h1>Help</h1>
-			<p>Need help? We're here for you.</p>
+			<div>
+				<h1>Help</h1>
+				<p>Need help? We're here for you.</p>
+			</div>
 		</div>
 	);
 }
