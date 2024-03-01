@@ -1,7 +1,9 @@
 /* Header */
-
 import React from 'react';
 import Image from 'next/image';
+
+// fix mobile view for header
+
 const Header = () => {
 	return (
 		<header className=" HEADER
@@ -9,8 +11,8 @@ const Header = () => {
 		justify-start
 		items-center
 		bg-gradient-to-r
-		from-purple-500
-		via-purple-600
+		from-purple-400
+		via-purple-500
 		to-purple-800
 		p-4
 		text-white
@@ -21,16 +23,25 @@ const Header = () => {
 			mr-4
 			">
 				<Image src="/Logo.gif" alt="Logo" width={150} height={150} />
-				<h1 className=" TITLE
-				m-0
-				p-0
-				font-bold
-				font-serif
-				font
-				text-5xl
-				">
+				<a href="/"
+				   className=" TITLE
+				   transition
+				   ease-in-out
+				   delay-200
+				   duration-200
+				   hover:text-blue-400
+				   hover:-translate-y-1
+				   hover:scale-110
+
+					m-0
+					p-0
+					font-bold
+					font-serif
+					font
+					text-5xl
+					">
 					SoulSupport
-				</h1>
+				</a>
 			</div>
 			<nav className=" NAVBAR
 			flex-1
@@ -45,13 +56,36 @@ const Header = () => {
 				p-0
 				">
 					<li className="text-base">
-						<a href="/" className="text-white hover:text-gray-200 transition-colors duration-300">Home</a>
+						<a
+							href="/"
+							className="HOME
+							text-white
+							hover:text-blue-400
+							transition-colors
+							duration-300
+							text-2xl
+							">
+							Home
+						</a>
 					</li>
 					<li>
-						<a href="/support" className="text-white hover:text-gray-200 transition-colors duration-300">Support</a>
+						<a href="/support" className="SUPPORT
+						text-white
+						hover:text-blue-400
+						transition-colors
+						duration-300
+						text-2xl
+						">Support</a>
 					</li>
 					<li>
-						<a href="/help" className="text-white hover:text-gray-200 transition-colors duration-300">Help</a>
+						<a href="/help" className="HELP
+						text-white
+						hover:text-blue-400
+						transition-colors
+						duration-300
+						text-2xl
+						drop-shadow-2xl
+						">Help</a>
 					</li>
 				</ul>
 			</nav>

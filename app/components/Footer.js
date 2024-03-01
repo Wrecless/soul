@@ -11,20 +11,26 @@ export default function Footer() {
 		via-purple-500
 		to-purple-700
 		text-white
-		py-3
+		py-1.5
 		px-6
 		">
-			<div className="flex justify-end space-x-4 text-l">
-				<a href="https://www.linkedin.com/in/yourusername/" target="_blank" rel="noopener noreferrer">
-					<FontAwesomeIcon icon={faLinkedin} className="mr-2"/>
+			<div className="flex justify-end">
+				<a href="https://www.linkedin.com/in/bruno-mata-41364b1b1/"
+				   target="_blank"
+				   rel="noopener noreferrer"
+				   className="flex justify-end space-x-4 text-sm hover:text-blue-600 mr-3
+			    ">
+					<FontAwesomeIcon icon={faLinkedin} className="mr-2 size-5"/>
 					LinkedIn
 				</a>
-				<div className="flex justify-center space-x-4 text-xl">
-					<a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-						<FontAwesomeIcon icon={faGithub} className="mr-2"/>
-						GitHub
-					</a>
-				</div>
+				<a href="https://github.com/wrecless"
+				   target="_blank"
+				   rel="noopener noreferrer"
+				   className="flex justify-end space-x-4 text-sm hover:text-gray-500
+			    ">
+					<FontAwesomeIcon icon={faGithub} className="mr-2 size-5"/>
+					GitHub
+				</a>
 			</div>
 
 		</footer>
