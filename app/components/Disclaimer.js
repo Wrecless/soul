@@ -80,4 +80,4 @@ export default function Main () {
 	);
 }
 
-// Path: app/components/Body.js
+// Path: app/components/Disclaimer.js

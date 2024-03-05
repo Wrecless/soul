@@ -33,4 +33,30 @@ body {
     text-wrap: balance;
   }
 }
+/* globals.css */
+.neomorphic-btn {
+  background-color: #e0e0e0; /* Darker shade for better contrast */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 8px 8px 15px #a7a7a7, /* Adjusted for more depth */
+              -8px -8px 15px #ffffff;
+  transition: all 0.3s ease;
+}
 
+.neomorphic-btn:hover {
+  background-color: #d1d1d1; /* Slightly darker on hover for depth */
+  box-shadow: 0px 0px 15px #a7a7a7, /* Subtler shadow on hover */
+              0px 0px 15px #ffffff;
+  transform: translateY(-5px); /* Lift effect on hover */
+  animation: hue-rotate 1s infinite linear;
+}
+
+@keyframes hue-rotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(-360deg);
+  }
+}
