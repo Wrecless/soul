@@ -7,16 +7,16 @@ import Footer from "@/app/components/Footer";
 export default function breathing() {
 	// Define your videos as objects with id and name properties
 	const videosTab1 = [
-		{ id: 'tybOi4hjZFQ', name: 'Wim Hof' },
-		{ id: 'DbDoBzGY3vo', name: 'Second Video Title' }
+		{ id: '0BNejY1e9ik', name: 'For Beginners' },
+		{ id: 'tybOi4hjZFQ', name: 'Intermediate' }
 	];
 	const videosTab2 = [
-		{ id: 'tybOi4hjZFQ', name: 'Third Video Title' },
-		{ id: 'DbDoBzGY3vo', name: 'Fourth Video Title' }
+		{ id: 'Dx112W4i5I0', name: 'Quick 60 seconds' },
+		{ id: '8vkYJf8DOsc', name: 'To Stop A Panic Attack' },
 	];
 	const videosTab3 = [
-		{ id: 'VideoID5', name: 'Fifth Video Title' },
-		{ id: 'VideoID6', name: 'Sixth Video Title' }
+		{ id: '4qACPNA2cKY', name: '4-7-8' },
+		{ id: 'bF_1ZiFta-E', name: 'Square breathing' }
 	];
 
 	return (
@@ -29,9 +29,9 @@ export default function breathing() {
 				via-purple-500
 				to-purple-600
 				">
-				<Tab videos={videosTab1} title="Tab 1"/>
-				<Tab videos={videosTab2} title="Tab 2"/>
-				<Tab videos={videosTab3} title="Tab 3"/>
+				<Tab videos={videosTab1} title="Wim Hof"/>
+				<Tab videos={videosTab2} title="Help with Anxiety"/>
+				<Tab videos={videosTab3} title="Others"/>
 			</div>
 
 			<Footer />
