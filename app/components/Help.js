@@ -1,9 +1,11 @@
 import React from 'react';
-import { FiPhoneCall } from 'react-icons/fi';
+//import { FiPhoneCall } from 'react-icons/fi';
 import Image from 'next/image';
-import { FaPhone } from "react-icons/fa6";
+//import { FaPhone } from "react-icons/fa6";
 
 {/* Replace "📞" with <FiPhoneCall /> if using an icon library */}
+
+//CHANGE ICONS FOR MOBILE VIEW ********************
 
 export default function SamaritansContactLine() {
 	return (
