@@ -16,7 +16,7 @@ export default function Main () {
 
 				<h2 className="text-2xl font-bold mt-6">1. Acceptance of Terms</h2>
 				<p className="mt-4">
-					By accessing and using SoulSupport ("the App"), you accept and agree to be bound by the terms and
+					By accessing and using SoulSupport (the App), you accept and agree to be bound by the terms and
 					provision of this disclaimer. If you do not agree to abide by these terms, please do not use the
 					App.
 				</p>
@@ -40,10 +40,10 @@ export default function Main () {
 
 				<h2 className="text-2xl font-bold mt-6">4. Liability</h2>
 				<p className="mt-4">
-					The App and its content are provided on an "as is" basis. The creator of SoulSupport hereby
+					The App and its content are provided on an as is basis. The creator of SoulSupport hereby
 					disclaims all warranties of any kind, express or implied, including, without limitation, the
 					warranties of merchantability, fitness for a particular purpose, and non-infringement. The creator
-					does not warrant that the App's content is accurate, reliable, or correct; that the App will be
+					does not warrant that the Apps content is accurate, reliable, or correct; that the App will be
 					available at any particular time or location; that any defects or errors will be corrected; or that
 					the content is free of viruses or other harmful components.
 				</p>
@@ -68,13 +68,14 @@ export default function Main () {
 				<h2 className="text-2xl font-bold mt-6">7. Changes to Disclaimer</h2>
 				<p className="mt-4">
 					The creator reserves the right, at their sole discretion, to modify or replace this disclaimer at
-					any time. What constitutes a material change will be determined at the creator's sole discretion.
+					any time. What constitutes a material change will be determined at the creators sole discretion.
 				</p>
 
 				<h2 className="text-2xl font-bold mt-6">Contact Us</h2>
 				<p className="mt-4">
 					If you have any questions about this disclaimer, please contact us at 100560015@unimail.derby.ac.uk.
 				</p>
+
 			</div>
 		</div>
 	);
