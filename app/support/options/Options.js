@@ -29,7 +29,6 @@ export default function SupportOptions() {
 			<div>
 				<h1 className="text-3xl font-bold">🚧 WORK IN PROGRESS 🚧</h1>
 				<p className="mt-4">More videos and content will be added in the future.</p>
-
 			</div>
 			{options.map((option) => (
 				<Link key={option.id} href={option.path} passHref>
