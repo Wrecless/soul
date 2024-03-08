@@ -20,10 +20,11 @@ export default function SupportOptions() {
 		to-purple-600
 		flex
 		flex-col
-		items-center
-		justify-center
 		bg-gray-100
 		flex-grow
+		justify-center
+		text-center
+
 		">
 			{options.map((option) => (
 				<Link key={option.id} href={option.path} passHref>
@@ -39,6 +40,8 @@ export default function SupportOptions() {
 					duration-300
 					ease-in-out
 					text-blue-500
+					mx-20
+
 					">
 						{option.name}
 					</div>

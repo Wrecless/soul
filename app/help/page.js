@@ -2,7 +2,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Help from '../components/Help';
+import Help from './body/Help';
 
 export default function help() {
 	return (

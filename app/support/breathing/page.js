@@ -11,8 +11,9 @@ export default function breathing() {
 		{ id: 'tybOi4hjZFQ', name: 'Intermediate' }
 	];
 	const videosTab2 = [
-		{ id: 'Dx112W4i5I0', name: 'Quick 60 seconds' },
 		{ id: '8vkYJf8DOsc', name: 'To Stop A Panic Attack' },
+		{ id: 'Dx112W4i5I0', name: 'Quick 60 seconds' },
+
 	];
 	const videosTab3 = [
 		{ id: '4qACPNA2cKY', name: '4-7-8' },
@@ -29,8 +30,8 @@ export default function breathing() {
 				via-purple-500
 				to-purple-600
 				">
-				<Tab videos={videosTab1} title="Wim Hof"/>
 				<Tab videos={videosTab2} title="Help with Anxiety"/>
+				<Tab videos={videosTab1} title="Wim Hof"/>
 				<Tab videos={videosTab3} title="Others"/>
 			</div>
 
