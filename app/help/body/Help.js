@@ -43,7 +43,7 @@ export default function SamaritansContactLine() {
 				hover:scale-110
                  ">
 					<a href="https://www.samaritans.org" target="_blank" rel="noopener noreferrer">
-						<Image src="/samaritans.png" alt="Samaritans UK" width={200} height={200}/>
+						<Image src="/samaritans.jpg" alt="Samaritans UK" width={200} height={200}/>
 					</a>
 				</div>
 
@@ -398,8 +398,80 @@ export default function SamaritansContactLine() {
 							0808 58 58 58
 						</a>
 					</p>
+					<p><strong>Website:</strong> <a
+						href="https://www.thecalmzone.net/get-support"
+						className="text-blue-400 hover:text-blue-800">www.thecalmzone.net</a>
+					</p>
 				</div>
 			</div>
+
+			<div className="SANETAB
+			flex
+			flex-col
+			sm:flex-row
+			items-center
+			p-2 rounded-xl
+			shadow
+			space-y-4
+			sm:space-y-0
+			sm:space-x-4
+			bg-gradient-to-b
+			from-blue-200
+			via-blue-300
+			to-blue-600
+			mx-1
+			">
+				{/* Icon */}
+				<div className="
+				flex-shrink-0
+				transition
+                ease-in-out
+                delay-150
+                duration-150
+				hover:-translate-y-1
+				hover:scale-110
+				">
+					<a href="https://www.sane.org.uk/how-we-help/emotional-support/saneline-services"
+					   target="_blank"
+					   rel="noopener noreferrer
+					   ">
+						<Image src="/Sane.svg" alt="OCD" width={200} height={150}/>
+					</a>
+				</div>
+
+				{/* Information */}
+				<div className="text-center sm:text-left">
+					<p className="text-xl font-bold font-serif">
+						SANE
+					</p>
+					<p>We are normally open every day of the year from 4pm to 10pm</p>
+					<p><strong>Helpline: </strong>
+						<a href="tel: 0300 304 7000"
+						   className="text-blue-400 hover:text-blue-900">
+							0300 304 7000
+						</a>
+					</p>
+					<p><strong>Email:</strong> <a
+						href="mailto: support@sane.org.uk"
+						className="text-blue-400 hover:text-blue-800"> support@sane.org.uk</a>
+					</p>
+					<p>
+						We reply to each email individually, and normally are able to respond within 72 hours.
+					</p>
+					<p><strong>Website:</strong> <a
+						href="https://www.sane.org.uk/how-we-help/emotional-support"
+						className="text-blue-400 hover:text-blue-800">www.sane.org.uk</a>
+					</p>
+					<p><strong>Resquest textcare:</strong> <a
+						href="https://form.jotform.com/221004693319350"
+						className="text-blue-400 hover:text-blue-800">www.sane.org.uk</a>
+					</p>
+					<p>
+						Textcare is not a crisis service.
+					</p>
+				</div>
+			</div>
+
 			<div>
 				<h1>
 					More to come...

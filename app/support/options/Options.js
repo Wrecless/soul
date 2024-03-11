@@ -4,27 +4,23 @@ import Link from 'next/link'; // Import the Link component
 
 const options = [
 	{ name: 'Breathing Exercises', id: 'breathing', path: '/support/breathing' },
-	{ name: 'Sleep Hypnotherapy', id: 'sleep', path: '/support/sleep' },
-	{ name: 'Sound Therapy', id: 'sound-therapy', path: '/support/sound-therapy' },
 	{ name: 'Meditation', id: 'meditation', path: '/support/meditation' },
-	{ name: 'Exercises', id: 'exercises', path: 'support/exercises' },
-	{ name: 'Diet', id: 'diet', path: '/support/diet' },
+	{ name: 'Sound Therapy', id: 'sound-therapy', path: '/support/sound-therapy' },
+	{ name: 'Exercises', id: 'exercises', path: '/support/exercises' },
+	{ name: 'Sleep Hypnotherapy', id: 'sleep', path: '/support/sleep' },
 ];
 
 export default function SupportOptions() {
 	return (
-		<div className="OPTIONS
+		<div className="
 		bg-gradient-to-r
 		from-purple-400
 		via-purple-500
-		to-purple-600
-		flex
-		flex-col
-		bg-gray-100
+		to-purple-600 flex
+		flex-col bg-gray-100
 		flex-grow
 		justify-center
 		text-center
-
 		">
 			<div>
 				<h1 className="text-3xl font-bold">🚧 WORK IN PROGRESS 🚧</h1>
@@ -35,7 +31,7 @@ export default function SupportOptions() {
 					<div className="neomorphic-btn
 					m-4
 					py-6
-					px-10
+					px-8
 					rounded-full
 					text-xl
 					font-semibold
@@ -44,8 +40,9 @@ export default function SupportOptions() {
 					duration-300
 					ease-in-out
 					text-blue-500
-					mx-20
-
+					mx-4
+					sm:mx-20
+					cursor-pointer
 					">
 						{option.name}
 					</div>

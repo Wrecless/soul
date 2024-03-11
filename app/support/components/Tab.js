@@ -7,17 +7,16 @@ export default function Tab({ videos, title }) {
 		<div className="tab-content">
 			<h2 className="VIDEO_TAB_TITLE
 				text-4xl
-				font-semibold
+				font-bold
 				mb-4
 				justify-center
 				text-center
 				pt-4
 				text-blue-900/60
-				font-serif
+				font-sans
 				underline
-
 			">
-				* {title} *
+				{title}
 			</h2>
 			<div className="
 			flex
