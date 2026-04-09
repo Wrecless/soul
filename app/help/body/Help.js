@@ -107,7 +107,7 @@ export default function Help() {
   ];
 
   return (
-    <div className="flex-1 font-body" style={{ background: 'linear-gradient(160deg, #C0DDD5 0%, #7BBDB0 50%, #4A9080 100%)' }}>
+    <main id="main-content" className="flex-1 font-body" style={{ background: 'linear-gradient(160deg, #C0DDD5 0%, #7BBDB0 50%, #4A9080 100%)' }}>
 
       <div className="text-center pt-10 pb-6 px-6">
         <p className="text-xs tracking-widest uppercase text-teal-950/40 mb-2">Help</p>
@@ -154,6 +154,6 @@ export default function Help() {
         ))}
       </div>
 
-    </div>
+    </main>
   );
 }

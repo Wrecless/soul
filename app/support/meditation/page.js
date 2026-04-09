@@ -5,16 +5,25 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import BenefitsPanel from '../components/BenefitsPanel';
 
+const benefits = [
+  { title: 'Mindfulness & Awareness', desc: 'Cultivates presence and enhances your awareness of the current moment.' },
+  { title: 'Stress Reduction',        desc: 'Significantly reduces stress levels, promoting relaxation and overall wellbeing.' },
+  { title: 'Improved Sleep',          desc: 'Regular practice improves sleep patterns, helping you fall asleep faster and stay asleep.' },
+  { title: 'Emotional Health',        desc: 'Reduces symptoms of anxiety and depression with consistent practice over time.' },
+  { title: 'Concentration',           desc: 'Enhances focus and concentration in both personal and professional life.' },
+  { title: 'Self-Compassion',         desc: 'Builds a kinder, more forgiving relationship with yourself and your thoughts.' },
+];
+
 export default function GuidedMeditation() {
   const videosForBeginners = [
     { id: 'U9YKY7fdwyg', name: "Meditation 101: A Beginner's Guide" },
     { id: '_hb-jMzGPdw', name: 'Finding Your Centre' },
   ];
-  const videosForSleep = [
+  const videosEmotional = [
     { id: 'KjH_HEadO7o', name: '10‑Minute for Self‑Love and Acceptance' },
     { id: 'z0GtmPnqAd8', name: '15‑Minute for Strength & Grounding' },
   ];
-  const videosForAnxiety = [
+  const videosStress = [
     { id: 'gqy8mmwDZk8', name: 'Feeling Overwhelmed' },
     { id: 'syx3a1_LeFo', name: 'Letting Go' },
   ];
@@ -23,7 +32,7 @@ export default function GuidedMeditation() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <div className="flex-1" style={{ background: 'linear-gradient(135deg, #F5E8CC 0%, #D4B57A 50%, #B8904A 100%)' }}>
+      <main id="main-content" className="flex-1" style={{ background: 'linear-gradient(135deg, #F5E8CC 0%, #D4B57A 50%, #B8904A 100%)' }}>
 
         <div className="text-center pt-10 pb-4 px-6">
           <p className="font-body text-xs tracking-widest uppercase text-amber-950/40 mb-2">Support</p>
@@ -35,18 +44,12 @@ export default function GuidedMeditation() {
           </p>
         </div>
 
-        <BenefitsPanel title="Benefits of Guided Meditation" accentClass="text-amber-950/70">
-          <p><strong>Mindfulness and awareness:</strong> Cultivates presence and enhances your awareness of the current moment.</p>
-          <p><strong>Stress reduction:</strong> Significantly reduces stress levels, promoting relaxation and wellbeing.</p>
-          <p><strong>Improved sleep:</strong> Regular practice improves sleep patterns, helping you fall asleep faster.</p>
-          <p><strong>Emotional health:</strong> Reduces symptoms of anxiety and depression over time.</p>
-          <p><strong>Concentration:</strong> Enhances focus and concentration in both personal and professional life.</p>
-        </BenefitsPanel>
+        <BenefitsPanel title="Benefits of Guided Meditation" benefits={benefits} accentClass="text-amber-950/70" />
 
-        <Tab videos={videosForBeginners} title="For Beginners"          titleClass="text-amber-950/60" />
-        <Tab videos={videosForSleep}     title="Emotional Wellbeing"      titleClass="text-amber-950/60" />
-        <Tab videos={videosForAnxiety}   title="Meditation for Stress"   titleClass="text-amber-950/60" />
-      </div>
+        <Tab videos={videosForBeginners} title="For Beginners"        titleClass="text-amber-950/60" />
+        <Tab videos={videosEmotional}    title="Emotional Wellbeing"  titleClass="text-amber-950/60" />
+        <Tab videos={videosStress}       title="Meditation for Stress" titleClass="text-amber-950/60" />
+      </main>
 
       <Footer />
     </div>

@@ -8,7 +8,7 @@ export default function Tab({ videos, title, titleClass = 'text-white/70' }) {
         {title}
       </h2>
       <div className="flex flex-wrap justify-center gap-6">
-        {videos.map((video, index) => (
+        {videos.map((video) => (
           <VideoPreview key={video.id} video={video.id} name={video.name} />
         ))}
       </div>

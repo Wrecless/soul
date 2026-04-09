@@ -5,27 +5,35 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import BenefitsPanel from '../components/BenefitsPanel';
 
+const benefits = [
+  { title: 'Stress Reduction',     desc: 'Deep breathing activates the parasympathetic nervous system, reducing anxiety and stress hormones.' },
+  { title: 'Respiratory Function', desc: 'Regular practice strengthens the diaphragm and increases lung capacity over time.' },
+  { title: 'Mental Clarity',       desc: 'Breathing exercises clear the mind, improving focus and reducing symptoms of depression.' },
+  { title: 'Better Sleep',         desc: 'Calming the nervous system before bed makes it easier to fall and stay asleep.' },
+  { title: 'Increased Energy',     desc: 'Deeper breathing improves oxygen flow to the brain and body, raising alertness naturally.' },
+  { title: 'Panic Relief',         desc: 'Controlled breathing is one of the fastest techniques to interrupt a panic response.' },
+];
+
 export default function BreathingExercises() {
-  const videosTab1 = [
-    { id: '0BNejY1e9ik', name: 'For Beginners' },
-    { id: 'tybOi4hjZFQ', name: 'Intermediate' },
-  ];
-  const videosTab2 = [
+  const videosAnxiety = [
     { id: '8vkYJf8DOsc', name: 'To Stop A Panic Attack' },
     { id: 'Dx112W4i5I0', name: 'Quick 60 Seconds' },
   ];
-  const videosTab3 = [
+  const videosClassic = [
     { id: '4qACPNA2cKY', name: '4‑7‑8 Technique' },
     { id: 'bF_1ZiFta-E', name: 'Box Breathing' },
+  ];
+  const videosWimHof = [
+    { id: '0BNejY1e9ik', name: 'For Beginners' },
+    { id: 'tybOi4hjZFQ', name: 'Intermediate' },
   ];
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <div className="flex-1" style={{ background: 'linear-gradient(135deg, #C8E6E2 0%, #7BB8B0 50%, #4A9990 100%)' }}>
+      <main id="main-content" className="flex-1" style={{ background: 'linear-gradient(135deg, #C8E6E2 0%, #7BB8B0 50%, #4A9990 100%)' }}>
 
-        {/* Page intro */}
         <div className="text-center pt-10 pb-4 px-6">
           <p className="font-body text-xs tracking-widest uppercase text-teal-900/50 mb-2">Support</p>
           <h1 className="font-display text-5xl md:text-6xl font-light text-teal-950/80 mb-2">
@@ -36,18 +44,12 @@ export default function BreathingExercises() {
           </p>
         </div>
 
-        <BenefitsPanel title="Benefits of Breathing Exercises" accentClass="text-teal-950/70">
-          <p><strong>Stress reduction:</strong> Deep breathing activates the parasympathetic nervous system, reducing anxiety and stress hormones.</p>
-          <p><strong>Improved respiratory function:</strong> Regular practice strengthens the diaphragm and increases lung capacity.</p>
-          <p><strong>Enhanced mental clarity:</strong> Breathing exercises clear the mind, improving focus and reducing depression symptoms.</p>
-          <p><strong>Better sleep:</strong> Calming the nervous system before bed makes it easier to fall and stay asleep.</p>
-          <p><strong>Increased energy:</strong> Deeper breathing improves oxygen flow to the brain and body.</p>
-        </BenefitsPanel>
+        <BenefitsPanel title="Benefits of Breathing Exercises" benefits={benefits} accentClass="text-teal-950/70" />
 
-        <Tab videos={videosTab2} title="For Anxiety" titleClass="text-teal-950/60" />
-        <Tab videos={videosTab1} title="Wim Hof Method"  titleClass="text-teal-950/60" />
-        <Tab videos={videosTab3} title="Classic Techniques" titleClass="text-teal-950/60" />
-      </div>
+        <Tab videos={videosAnxiety} title="For Anxiety & Panic"  titleClass="text-teal-950/60" />
+        <Tab videos={videosClassic} title="Classic Techniques"   titleClass="text-teal-950/60" />
+        <Tab videos={videosWimHof}  title="Wim Hof Method"       titleClass="text-teal-950/60" />
+      </main>
 
       <Footer />
     </div>

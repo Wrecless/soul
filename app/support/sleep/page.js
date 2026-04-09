@@ -5,16 +5,25 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import BenefitsPanel from '../components/BenefitsPanel';
 
+const benefits = [
+  { title: 'Enhanced Sleep Quality',    desc: 'Deeply relaxes you, making it easier to fall asleep and remain asleep through the night.' },
+  { title: 'Anxiety Reduction',         desc: 'Addresses subconscious sources of stress, quieting the mind that keeps you awake.' },
+  { title: 'Improved Sleep Patterns',   desc: 'Regular sessions help reset your sleep cycles and address chronic insomnia.' },
+  { title: 'Deep Relaxation',           desc: 'Provides profound physical and mental relaxation before bedtime, releasing tension.' },
+  { title: 'Positive Sleep Associations', desc: 'Creates a calm, welcoming relationship with bedtime rather than dread or anxiety.' },
+  { title: 'No Side Effects',           desc: 'A completely natural approach to improving sleep — no medication or dependency involved.' },
+];
+
 export default function SleepHypnotherapy() {
-  const videosForRelaxation = [
+  const videosRelaxation = [
     { id: 'r_5N_vVl4JY', name: 'Declutter Your Mind Before Deep Sleep' },
     { id: 'vWlf_rh7xFY', name: 'Hypnosis for Instant Deep Sleep' },
   ];
-  const videosForDeepSleep = [
+  const videosDeepSleep = [
     { id: 'Cp9abS-7m_A', name: "Guided Hypnosis for a Full Night's Sleep" },
     { id: 'MsQzakXQ9oQ', name: 'Stop Panic & Anxiety' },
   ];
-  const videosForInsomnia = [
+  const videosInsomnia = [
     { id: 'odvdQvJ4GYk', name: 'Sleep Talk Down Guided Sleep Meditation' },
     { id: 'SCcfnwS9sec', name: 'Release Destructive Energy' },
   ];
@@ -23,7 +32,7 @@ export default function SleepHypnotherapy() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <div className="flex-1" style={{ background: 'linear-gradient(160deg, #1C2E42 0%, #22385A 50%, #1A2C44 100%)' }}>
+      <main id="main-content" className="flex-1" style={{ background: 'linear-gradient(160deg, #1C2E42 0%, #22385A 50%, #1A2C44 100%)' }}>
 
         <div className="text-center pt-10 pb-4 px-6">
           <p className="font-body text-xs tracking-widest uppercase text-blue-200/30 mb-2">Support</p>
@@ -35,18 +44,12 @@ export default function SleepHypnotherapy() {
           </p>
         </div>
 
-        <BenefitsPanel title="Benefits of Sleep Hypnotherapy" accentClass="text-blue-200/70">
-          <p><strong>Enhanced sleep quality:</strong> Deeply relaxes you, making it easier to fall asleep and remain asleep through the night.</p>
-          <p><strong>Stress and anxiety reduction:</strong> Addresses subconscious sources of stress, promoting more restful sleep.</p>
-          <p><strong>Improved sleep patterns:</strong> Regular sessions help reset your sleep cycles and address insomnia.</p>
-          <p><strong>Deep relaxation:</strong> Provides profound physical and mental relaxation before bedtime.</p>
-          <p><strong>Positive sleep associations:</strong> Creates a calm, welcoming relationship with bedtime.</p>
-        </BenefitsPanel>
+        <BenefitsPanel title="Benefits of Sleep Hypnotherapy" benefits={benefits} accentClass="text-blue-200/70" />
 
-        <Tab videos={videosForRelaxation} title="Michael Sealey"      titleClass="text-blue-200/50" />
-        <Tab videos={videosForDeepSleep}  title="Minds in Unison"      titleClass="text-blue-200/50" />
-        <Tab videos={videosForInsomnia}   title="Jason Stephenson"     titleClass="text-blue-200/50" />
-      </div>
+        <Tab videos={videosRelaxation} title="Michael Sealey"     titleClass="text-blue-200/50" />
+        <Tab videos={videosDeepSleep}  title="Minds in Unison"    titleClass="text-blue-200/50" />
+        <Tab videos={videosInsomnia}   title="Jason Stephenson"   titleClass="text-blue-200/50" />
+      </main>
 
       <Footer />
     </div>

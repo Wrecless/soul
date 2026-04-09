@@ -1,7 +1,7 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
-import { Suspense } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -64,11 +64,30 @@ const bands = [
 ];
 
 function ResultsContent() {
-  const params = useSearchParams();
-  const score  = Math.min(12, Math.max(0, Number(params.get('score') ?? 0)));
-  const band   = bands.find((b) => score >= b.min && score <= b.max) ?? bands[0];
+  const router = useRouter();
+  const [score, setScore] = useState(null);
 
-  const pct = Math.round((score / 12) * 100);
+  useEffect(() => {
+    try {
+      const stored = sessionStorage.getItem('ss_phq4_score');
+      const parsed = Number(stored);
+      // Redirect if no score stored, or if the stored value is not a valid number
+      if (stored === null || isNaN(parsed)) {
+        router.replace('/questionnaire');
+        return;
+      }
+      setScore(Math.min(12, Math.max(0, parsed)));
+    } catch {
+      router.replace('/questionnaire');
+    }
+  }, [router]);
+
+  if (score === null) {
+    return <div className="text-ink-soft text-center py-12">Loading your results…</div>;
+  }
+
+  const band = bands.find((b) => score >= b.min && score <= b.max) ?? bands[0];
+  const pct  = Math.round((score / 12) * 100);
 
   return (
     <div className="w-full max-w-lg anim-float-up">
@@ -84,7 +103,14 @@ function ResultsContent() {
         <p className={`text-lg font-semibold ${band.colour} mb-4`}>{band.label}</p>
 
         {/* Score bar */}
-        <div className="h-2 rounded-full bg-ink/10 overflow-hidden mx-auto max-w-xs mb-6">
+        <div
+          role="progressbar"
+          aria-valuenow={score}
+          aria-valuemin={0}
+          aria-valuemax={12}
+          aria-label={`PHQ-4 score: ${score} out of 12 — ${band.label}`}
+          className="h-2 rounded-full bg-ink/10 overflow-hidden mx-auto max-w-xs mb-6"
+        >
           <div
             className={`h-full rounded-full progress-fill ${band.barColour}`}
             style={{ width: `${pct}%` }}
@@ -123,7 +149,7 @@ function ResultsContent() {
                 transition-all duration-200 hover:-translate-y-0.5
                 ${rec.highlight
                   ? 'border-teal/50 bg-teal/8 hover:bg-teal/15'
-                  : 'border-ink/10 bg-white/60 hover:border-sage/40 hover:bg-sage/5'
+                  : 'border-ink/10 bg-warm-white/60 hover:border-sage/40 hover:bg-sage/5'
                 }
               `}
             >
@@ -138,9 +164,12 @@ function ResultsContent() {
         </div>
       </div>
 
-      {/* Disclaimer */}
-      <p className="text-xs text-ink-soft/60 italic text-center mb-8 leading-relaxed">
+      {/* Disclaimer + PHQ-4 citation */}
+      <p className="text-xs text-ink-soft/60 italic text-center mb-2 leading-relaxed">
         This check‑in uses the PHQ‑4, a validated screening tool. It is <strong>not a diagnosis</strong> and does not replace professional advice. If you are concerned about your mental health, please speak to your GP or a qualified health professional.
+      </p>
+      <p className="text-xs text-ink-soft/50 text-center mb-8 leading-relaxed">
+        PHQ‑4: Kroenke K, Spitzer RL, Williams JBW, Löwe B. (2009). An ultra‑brief patient health questionnaire for multicomponent mental health assessment. <em>Archives of Internal Medicine</em>, 169(10), 1057–1061.
       </p>
 
       {/* Actions */}
@@ -167,10 +196,8 @@ export default function ResultsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-cream font-body">
       <Header />
-      <main className="flex-1 flex flex-col items-center justify-center px-6 py-14">
-        <Suspense fallback={<div className="text-ink-soft">Loading results…</div>}>
-          <ResultsContent />
-        </Suspense>
+      <main id="main-content" className="flex-1 flex flex-col items-center justify-center px-6 py-14">
+        <ResultsContent />
       </main>
       <Footer />
     </div>

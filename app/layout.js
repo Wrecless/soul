@@ -27,7 +27,16 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/brain.png" />
       </head>
-      <body>{children}</body>
+      <body>
+        {/* Skip link — first DOM element so keyboard users reach it before any landmark */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-cream focus:text-ink focus:rounded-full focus:font-semibold focus:text-sm"
+        >
+          Skip to main content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

@@ -19,8 +19,8 @@ const triageCards = [
     label: "I'm struggling to sleep",
     sublabel: 'Wind down and rest deeply',
     route: '/support/sleep',
-    bg: 'bg-[#1E3142]/10 hover:bg-[#1E3142]/18 border-[#1E3142]/20',
-    dot: 'bg-[#2D4A6B]',
+    bg: 'bg-sanctuary-sleep/10 hover:bg-sanctuary-sleep/20 border-sanctuary-sleep/20',
+    dot: 'bg-sanctuary-sleep',
   },
   {
     emoji: '💬',
@@ -43,16 +43,16 @@ const triageCards = [
     label: 'I want to move my body',
     sublabel: 'Gentle movement and exercise',
     route: '/support/exercises',
-    bg: 'bg-[#8AAD6E]/15 hover:bg-[#8AAD6E]/25 border-[#8AAD6E]/30',
-    dot: 'bg-[#8AAD6E]',
+    bg: 'bg-sanctuary-exercises/15 hover:bg-sanctuary-exercises/25 border-sanctuary-exercises/30',
+    dot: 'bg-sanctuary-exercises',
   },
   {
     emoji: '🎵',
     label: 'I want to try sound therapy',
     sublabel: 'Frequencies that soothe the mind',
     route: '/support/sound-therapy',
-    bg: 'bg-[#9B82C8]/15 hover:bg-[#9B82C8]/25 border-[#9B82C8]/30',
-    dot: 'bg-[#9B82C8]',
+    bg: 'bg-sanctuary-sound/15 hover:bg-sanctuary-sound/25 border-sanctuary-sound/30',
+    dot: 'bg-sanctuary-sound',
   },
 ];
 
@@ -70,6 +70,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-cream font-body">
       <Header />
 
+      <main id="main-content">
       {/* ── HERO ────────────────────────────────────────── */}
       <section className="relative overflow-hidden flex flex-col items-center justify-center text-center px-6 py-20 md:py-28 bg-cream">
 
@@ -173,7 +174,8 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="flex-1" />
+      </main>
+
       <Footer />
     </div>
   );

@@ -11,7 +11,7 @@ const options = [
 
 export default function SupportOptions() {
   return (
-    <div className="flex-1 bg-cream px-6 py-14">
+    <main id="main-content" className="flex-1 bg-cream px-6 py-14">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-10">
           <h1 className="font-display text-5xl md:text-6xl font-light text-ink mb-3">
@@ -45,6 +45,6 @@ export default function SupportOptions() {
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }

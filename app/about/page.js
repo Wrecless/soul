@@ -11,7 +11,7 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen bg-cream font-body">
       <Header />
 
-      <main className="flex-1 max-w-2xl mx-auto w-full px-6 py-14">
+      <main id="main-content" className="flex-1 max-w-2xl mx-auto w-full px-6 py-14">
 
         {/* Heading */}
         <h1 className="font-display text-5xl md:text-6xl font-light text-ink mb-3 anim-float-up">

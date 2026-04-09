@@ -43,7 +43,8 @@ export default function QuestionnairePage() {
 
   const currentQ = questions[step - 1];
   const totalQs  = questions.length;
-  const progress = step === 0 ? 0 : Math.round((step / totalQs) * 100);
+  // Show how many questions have been answered (0% on Q1, 100% only after final answer submitted)
+  const progress = step === 0 ? 0 : Math.round(((step - 1) / totalQs) * 100);
 
   function handleStart() {
     setStep(1);
@@ -60,7 +61,9 @@ export default function QuestionnairePage() {
       setStep(step + 1);
     } else {
       const score = Object.values(updated).reduce((a, b) => a + b, 0);
-      router.push(`/questionnaire/results?score=${score}`);
+      // Store via sessionStorage rather than URL param — keeps results on device as promised
+      try { sessionStorage.setItem('ss_phq4_score', String(score)); } catch (_) {}
+      router.push('/questionnaire/results');
     }
   }
 
@@ -68,7 +71,7 @@ export default function QuestionnairePage() {
     <div className="flex flex-col min-h-screen bg-cream font-body">
       <Header />
 
-      <main className="flex-1 flex flex-col items-center justify-center px-6 py-14">
+      <main id="main-content" className="flex-1 flex flex-col items-center justify-center px-6 py-14">
         <div className="w-full max-w-lg">
 
           {/* ── Intro screen ─────────────────────────────── */}
@@ -107,7 +110,14 @@ export default function QuestionnairePage() {
                   <span>Question {step} of {totalQs}</span>
                   <span>{progress}%</span>
                 </div>
-                <div className="h-1.5 rounded-full bg-ink/10 overflow-hidden">
+                <div
+                  role="progressbar"
+                  aria-valuenow={progress}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-label={`Question ${step} of ${totalQs}`}
+                  className="h-1.5 rounded-full bg-ink/10 overflow-hidden"
+                >
                   <div
                     className="h-full rounded-full bg-sage progress-fill"
                     style={{ width: `${progress}%` }}
