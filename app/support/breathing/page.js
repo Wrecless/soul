@@ -21,11 +21,16 @@ export default function BreathingExercises() {
   ];
   const videosClassic = [
     { id: '4qACPNA2cKY', name: '4‑7‑8 Technique' },
-    { id: 'bF_1ZiFta-E', name: 'Box Breathing' },
+    { id: 'inpok4MKVLM', name: 'Physiological Sigh' },
   ];
   const videosWimHof = [
     { id: '0BNejY1e9ik', name: 'For Beginners' },
     { id: 'tybOi4hjZFQ', name: 'Intermediate' },
+    { id: 'nzCaZQqAs9I', name: 'Wim Hof Explains the Technique' },
+  ];
+  const videosPranayama = [
+    { id: 'i3f6m7m9GWQ', name: 'Alternate Nostril Breathing' },
+    { id: 'bF_1ZiFta-E', name: 'Box Breathing' },
   ];
 
   return (
@@ -46,9 +51,10 @@ export default function BreathingExercises() {
 
         <BenefitsPanel title="Benefits of Breathing Exercises" benefits={benefits} accentClass="text-teal-950/70" />
 
-        <Tab videos={videosAnxiety} title="For Anxiety & Panic"  titleClass="text-teal-950/60" />
-        <Tab videos={videosClassic} title="Classic Techniques"   titleClass="text-teal-950/60" />
-        <Tab videos={videosWimHof}  title="Wim Hof Method"       titleClass="text-teal-950/60" />
+        <Tab videos={videosAnxiety}   title="For Anxiety & Panic" titleClass="text-teal-950/60" />
+        <Tab videos={videosClassic}   title="Classic Techniques"  titleClass="text-teal-950/60" />
+        <Tab videos={videosWimHof}    title="Wim Hof Method"      titleClass="text-teal-950/60" />
+        <Tab videos={videosPranayama} title="Pranayama"           titleClass="text-teal-950/60" />
       </main>
 
       <Footer />

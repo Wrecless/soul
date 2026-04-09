@@ -28,6 +28,7 @@ export default function AnxietyDepressionExercises() {
   const videosYoga = [
     { id: '3YOYyQ8cb5c', name: 'Full Body Yin Yoga for Beginners' },
     { id: 'sTANio_2E0Q', name: 'Stress & Anxiety Relief' },
+    { id: 'hJbRpHZr_d0', name: 'Yoga for Anxiety and Stress' },
   ];
 
   return (

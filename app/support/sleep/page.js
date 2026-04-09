@@ -18,6 +18,7 @@ export default function SleepHypnotherapy() {
   const videosRelaxation = [
     { id: 'r_5N_vVl4JY', name: 'Declutter Your Mind Before Deep Sleep' },
     { id: 'vWlf_rh7xFY', name: 'Hypnosis for Instant Deep Sleep' },
+    { id: '_xzjWPSPTq8', name: 'Deep Sleep for Mind Body Spirit Cleansing' },
   ];
   const videosDeepSleep = [
     { id: 'Cp9abS-7m_A', name: "Guided Hypnosis for a Full Night's Sleep" },
@@ -26,6 +27,11 @@ export default function SleepHypnotherapy() {
   const videosInsomnia = [
     { id: 'odvdQvJ4GYk', name: 'Sleep Talk Down Guided Sleep Meditation' },
     { id: 'SCcfnwS9sec', name: 'Release Destructive Energy' },
+    { id: 's_SMIouQGps', name: 'Pain Management with Binaural Music' },
+  ];
+  const videosSleepMeditation = [
+    { id: 'HoKYdHLDuc8', name: 'Ascension from Earth to Stars' },
+    { id: 'hJbRpHZr_d0', name: 'Yoga Nidra for Deep Sleep' },
   ];
 
   return (
@@ -46,9 +52,10 @@ export default function SleepHypnotherapy() {
 
         <BenefitsPanel title="Benefits of Sleep Hypnotherapy" benefits={benefits} accentClass="text-blue-200/70" />
 
-        <Tab videos={videosRelaxation} title="Michael Sealey"     titleClass="text-blue-200/50" />
-        <Tab videos={videosDeepSleep}  title="Minds in Unison"    titleClass="text-blue-200/50" />
-        <Tab videos={videosInsomnia}   title="Jason Stephenson"   titleClass="text-blue-200/50" />
+        <Tab videos={videosRelaxation}      title="Michael Sealey"     titleClass="text-blue-200/50" />
+        <Tab videos={videosDeepSleep}       title="Minds in Unison"    titleClass="text-blue-200/50" />
+        <Tab videos={videosInsomnia}         title="Jason Stephenson"   titleClass="text-blue-200/50" />
+        <Tab videos={videosSleepMeditation}  title="Sleep Meditation"   titleClass="text-blue-200/50" />
       </main>
 
       <Footer />
