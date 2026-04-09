@@ -1,485 +1,159 @@
 import React from 'react';
 import Image from 'next/image';
 
-{/* Replace "📞" with <FiPhoneCall /> if using an icon library */}
+export default function Help() {
+  const helplines = [
+    {
+      id: 'samaritans',
+      name: 'Samaritans UK',
+      tagline: 'Reach out for help anytime, day or night.',
+      hours: 'Available 24 hours a day, 7 days a week',
+      contacts: [
+        { type: 'phone', label: 'Phone', value: '116 123', href: 'tel:116123', note: 'FREE (UK)' },
+        { type: 'web',   label: 'Website', value: 'www.samaritans.org', href: 'https://www.samaritans.org' },
+      ],
+      logo: '/samaritans.jpg',
+      bg: 'bg-green-50 border-green-100',
+    },
+    {
+      id: 'nhs',
+      name: 'Derbyshire Mental Health Helpline',
+      tagline: 'Free NHS mental health support line.',
+      hours: 'Open 24 hours a day, seven days a week',
+      contacts: [
+        { type: 'phone', label: 'Phone', value: '0800 028 0077', href: 'tel:08000280077', note: 'FREE (UK)' },
+        { type: 'web',   label: 'Website', value: 'www.nhs.uk', href: 'https://www.derbyshirehealthcareft.nhs.uk/services/helpline-and-support-service' },
+      ],
+      logo: '/NHS.png',
+      bg: 'bg-blue-50 border-blue-100',
+    },
+    {
+      id: 'mind',
+      name: 'Mind',
+      tagline: 'Mental health charity offering information and advice.',
+      hours: 'Mon–Fri, 9am–6pm (exc. bank holidays)',
+      contacts: [
+        { type: 'phone', label: 'Infoline',            value: '0300 123 3393', href: 'tel:03001233393' },
+        { type: 'email', label: 'Info email',          value: 'info@mind.org.uk', href: 'mailto:info@mind.org.uk' },
+        { type: 'phone', label: 'Welfare benefits',    value: '0300 222 5782', href: 'tel:03002225782' },
+        { type: 'phone', label: 'Legal line',          value: '0300 466 6463', href: 'tel:03004666463' },
+      ],
+      logo: '/Mind.png',
+      bg: 'bg-white border-gray-100',
+    },
+    {
+      id: 'anxiety-uk',
+      name: 'Anxiety UK',
+      tagline: 'Specialist support for those living with anxiety.',
+      hours: 'Mon–Fri, 10:30am–4:30pm',
+      contacts: [
+        { type: 'phone', label: 'Helpline',      value: '03444 775 774', href: 'tel:03444775774' },
+        { type: 'phone', label: 'Text service',  value: '07537 416 905', href: 'tel:07537416905' },
+        { type: 'web',   label: 'Website', value: 'anxietyuk.org.uk', href: 'https://www.anxietyuk.org.uk/contact-us/' },
+      ],
+      logo: '/Anxiety.png',
+      bg: 'bg-green-900/5 border-green-900/10',
+    },
+    {
+      id: 'ocd-action',
+      name: 'OCD Action',
+      tagline: 'Support and information for people affected by OCD.',
+      hours: 'Mon–Fri, 9am–5pm',
+      contacts: [
+        { type: 'phone', label: 'Helpline', value: '0300 636 5478', href: 'tel:03006365478' },
+        { type: 'email', label: 'Email',    value: 'support@ocdaction.org.uk', href: 'mailto:support@ocdaction.org.uk' },
+      ],
+      logo: '/ocd.svg',
+      bg: 'bg-blue-900/5 border-blue-900/10',
+    },
+    {
+      id: 'derby',
+      name: 'Derby City Council (Relate Services)',
+      tagline: 'Local counselling and relationship support.',
+      hours: 'Mon, Tue & Thu, 10am–1pm',
+      contacts: [
+        { type: 'phone', label: 'Relate helpline', value: '0808 178 9363', href: 'tel:08081789363', note: 'FREE' },
+        { type: 'phone', label: 'Counsellor',      value: '01332 349177',  href: 'tel:01332349177' },
+        { type: 'email', label: 'Email',            value: 'info@relatederby.org.uk', href: 'mailto:info@relatederby.org.uk' },
+      ],
+      logo: '/Derby.png',
+      bg: 'bg-green-800/5 border-green-800/10',
+    },
+    {
+      id: 'calm',
+      name: 'CALM',
+      tagline: 'Campaign Against Living Miserably — for anyone in crisis.',
+      hours: '5pm–midnight, 365 days a year',
+      contacts: [
+        { type: 'phone', label: 'Helpline', value: '0808 58 58 58', href: 'tel:0808585858', note: 'FREE' },
+        { type: 'web',   label: 'Website',  value: 'thecalmzone.net', href: 'https://www.thecalmzone.net/get-support' },
+      ],
+      logo: '/calm.svg',
+      bg: 'bg-emerald-900/5 border-emerald-900/10',
+    },
+    {
+      id: 'sane',
+      name: 'SANE',
+      tagline: 'Emotional support and information for those affected by mental illness.',
+      hours: 'Every day, 4pm–10pm',
+      contacts: [
+        { type: 'phone', label: 'Helpline', value: '0300 304 7000', href: 'tel:03003047000' },
+        { type: 'email', label: 'Email',    value: 'support@sane.org.uk', href: 'mailto:support@sane.org.uk', note: 'Replies within 72 hours' },
+        { type: 'web',   label: 'Website',  value: 'sane.org.uk', href: 'https://www.sane.org.uk/how-we-help/emotional-support' },
+      ],
+      logo: '/Sane.svg',
+      bg: 'bg-blue-50 border-blue-100',
+    },
+  ];
 
-//CHANGE ICONS FOR MOBILE VIEW ********************
+  return (
+    <div className="flex-1 font-body" style={{ background: 'linear-gradient(160deg, #C0DDD5 0%, #7BBDB0 50%, #4A9080 100%)' }}>
 
-export default function SamaritansContactLine() {
-	return (
-		<div className="HELPTABS
-		flex-grow
-		bg-gradient-to-r
-		from-purple-400
-		via-purple-500
-		to-purple-600
-		flex-col
-		space-y-1
+      <div className="text-center pt-10 pb-6 px-6">
+        <p className="text-xs tracking-widest uppercase text-teal-950/40 mb-2">Help</p>
+        <h1 className="font-display text-5xl md:text-6xl font-light text-teal-950/80 mb-2">
+          UK Helplines
+        </h1>
+        <p className="text-teal-900/60 text-base max-w-md mx-auto">
+          You are not alone. Every organisation below offers free, confidential support — no referral needed.
+        </p>
+      </div>
 
-		">
-			<div className="SAMARITANSTAB
-			flex
-			flex-col
-			sm:flex-row
-			items-center
-			p-2
-			rounded-xl
-			shadow
-			space-y-4
-			sm:space-y-0
-			sm:space-x-4
-			bg-green-400
-			mt-1
-			mx-1
-			">
-				{/* Icon */}
-				<div className="
-				flex-shrink-0
-				transition
-                ease-in-out
-                delay-150
-                duration-150
-				hover:-translate-y-1
-				hover:scale-110
-                 ">
-					<a href="https://www.samaritans.org" target="_blank" rel="noopener noreferrer">
-						<Image src="/samaritans.jpg" alt="Samaritans UK" width={200} height={200}/>
-					</a>
-				</div>
+      <div className="max-w-2xl mx-auto px-4 pb-12 space-y-3">
+        {helplines.map((line) => (
+          <div
+            key={line.id}
+            className={`flex flex-col sm:flex-row gap-4 items-start p-5 rounded-2xl border bg-white/70 backdrop-blur-sm shadow-sm`}
+          >
+            {/* Logo */}
+            <div className="flex-shrink-0 self-center sm:self-start">
+              <a href={line.contacts.find(c => c.type === 'web')?.href ?? '#'} target="_blank" rel="noopener noreferrer">
+                <Image src={line.logo} alt={line.name} width={90} height={70} className="object-contain rounded-lg" />
+              </a>
+            </div>
 
+            {/* Info */}
+            <div className="flex-1 min-w-0">
+              <p className="font-display text-xl font-medium text-ink mb-0.5">{line.name}</p>
+              <p className="text-ink-soft text-sm mb-0.5">{line.tagline}</p>
+              <p className="text-ink-soft/60 text-xs mb-3">{line.hours}</p>
 
-				{/* Information */}
-				<div className="text-center sm:text-left">
-					<p className="text-xl font-bold font-serif">Samaritans UK</p>
-					<p>Reach out for help anytime, day or night.</p>
-					<p><strong>Phone: </strong>
+              <div className="space-y-1">
+                {line.contacts.map((c) => (
+                  <p key={c.label} className="text-sm text-ink-soft">
+                    <strong className="text-ink font-semibold">{c.label}: </strong>
+                    <a href={c.href} className="text-teal-700 hover:text-teal-900 hover:underline underline-offset-2 transition-colors">
+                      {c.value}
+                    </a>
+                    {c.note && <span className="text-ink-soft/60 text-xs ml-1">({c.note})</span>}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
 
-						<a href="tel:+44116123"
-						   className="text-blue-600 hover:text-blue-900">
-							116 123
-						</a>
-						<span> FREE (UK)</span>
-					</p>
-					<p><strong>Website:</strong>
-						<a href="https://www.samaritans.org"
-						   className="text-blue-600 hover:text-blue-800
-						">
-							www.samaritans.org
-						</a>
-					</p>
-				</div>
-			</div>
-
-			<div className="NHSTAB
-			flex
-			flex-col
-			sm:flex-row
-			items-center
-			p-2 rounded-xl
-			shadow
-			space-y-4
-			sm:space-y-0
-			sm:space-x-4
-			bg-blue-500
-			mx-1
-			">
-				{/* Icon */}
-				<div className="
-				flex-shrink-0
-				transition
-                ease-in-out
-                delay-150
-                duration-150
-				hover:-translate-y-1
-				hover:scale-110
-				">
-					<a href="https://www.derbyshirehealthcareft.nhs.uk/services/helpline-and-support-service"
-					   target="_blank"
-					   rel="noopener noreferrer
-					   ">
-						<Image src="/NHS.png" alt="NHS" width={200} height={200}/>
-					</a>
-				</div>
-
-				{/* Information */}
-				<div className="text-center sm:text-left">
-					<p className="text-xl font-bold font-serif">Derbyshire Mental Health Helpline and Support
-						Service</p>
-					<p>It is open 24 hours a day, seven days a week.</p>
-					<p><strong>Phone: </strong>
-
-						<a href="tel: 0800 028 0077"
-						   className="text-blue-600 hover:text-blue-900">
-							0800 028 0077
-						</a>
-						<span> FREE (UK)</span>
-					</p>
-					<p><strong>Website:</strong> <a
-						href="https://www.derbyshirehealthcareft.nhs.uk/services/helpline-and-support-service"
-						className="text-blue-600 hover:text-blue-800">www.nhs.uk</a>
-					</p>
-				</div>
-			</div>
-
-			<div className="MINDTAB
-			flex
-			flex-col
-			sm:flex-row
-			items-center p-2
-			rounded-xl shadow
-			space-y-4
-			sm:space-y-0
-			sm:space-x-4
-			bg-white
-			mx-1
-			">
-				{/* Icon */}
-				<div className="
-				flex-shrink-0
-				transition
-                ease-in-out
-                delay-150
-                duration-150
-				hover:-translate-y-1
-				hover:scale-110
-				">
-					<a href="https://www.mind.org.uk/"
-					   target="_blank"
-					   rel="noopener noreferrer
-					   ">
-						<Image src="/Mind.png" alt="Mind" width={200} height={200}/>
-					</a>
-				</div>
-
-				{/* Information */}
-				<div className="text-center sm:text-left">
-					<p className="text-xl text-blue-400 font-bold font-serif">Mind</p>
-					<p className="text-blue-300">We are open 9am to 6pm, Monday to Friday (except for bank
-						holidays).</p>
-					<p className="text-blue-300"><strong>Infoline: </strong>
-						<a href="tel: 0300 123 3393"
-						   className="text-blue-600 hover:text-blue-900">
-							0300 123 3393
-						</a>
-					</p>
-					<p className="text-blue-300"><strong>Info email:</strong> <a
-						href="mailto:info@mind.org.uk"
-						className="text-blue-600 hover:text-blue-900">info@mind.org.uk</a>
-					</p>
-
-					<p className="text-blue-300"><strong>Welfare benefits line: </strong>
-						<a href="tel: 0300 222 5782"
-						   className="text-blue-600 hover:text-blue-900">
-							0300 222 5782
-						</a>
-					</p>
-
-					<p className="text-blue-300"><strong>Legal line: </strong>
-						<a href="tel: 0300 466 6463"
-						   className="text-blue-600 hover:text-blue-900">
-							0300 466 6463
-						</a>
-					</p>
-					<p className="text-blue-300"><strong>Legal email:</strong> <a
-						href="mailto:legal@mind.org.uk"
-						className="text-blue-600 hover:text-blue-900">legal@mind.org.uk</a>
-					</p>
-				</div>
-			</div>
-
-			<div className="ANXIERTYUKTAB
-			flex
-			flex-col
-			sm:flex-row
-			items-center
-			p-2 rounded-xl
-			shadow
-			space-y-4
-			sm:space-y-0
-			sm:space-x-4
-			bg-green-800
-			mx-1
-			">
-				{/* Icon */}
-				<div className="
-				flex-shrink-0
-				transition
-                ease-in-out
-                delay-150
-                duration-150
-				hover:-translate-y-1
-				hover:scale-110
-				">
-					<a href="https://www.anxietyuk.org.uk/"
-					   target="_blank"
-					   rel="noopener noreferrer
-					   ">
-						<Image src="/Anxiety.png" alt="Anxiety UK" width={200} height={200}/>
-					</a>
-				</div>
-
-				{/* Information */}
-				<div className="text-center sm:text-left">
-					<p className="text-xl font-bold font-serif">
-						Anxiety UK
-					</p>
-					<p>Open Monday to Friday 10:30-16:30</p>
-					<p><strong>Helpline: </strong>
-						<a href="tel: 03444 775 774"
-						   className="text-blue-400 hover:text-blue-900">
-							03444 775 774
-						</a>
-					</p>
-					<p><strong>Text service: </strong>
-						<a href="tel: 07537 416 905"
-						   className="text-blue-400 hover:text-blue-900">
-							07537 416 905
-						</a>
-					</p>
-					<p><strong>Website:</strong> <a
-						href="https://www.anxietyuk.org.uk/contact-us/"
-						className="text-blue-400 hover:text-blue-800">https://www.anxietyuk.org.uk</a>
-					</p>
-				</div>
-			</div>
-
-			<div className="OCDTAB
-			flex
-			flex-col
-			sm:flex-row
-			items-center
-			p-2 rounded-xl
-			shadow
-			space-y-4
-			sm:space-y-0
-			sm:space-x-4
-			bg-blue-800
-			mx-1
-			">
-				{/* Icon */}
-				<div className="
-				flex-shrink-0
-				transition
-                ease-in-out
-                delay-150
-                duration-150
-				hover:-translate-y-1
-				hover:scale-110
-				">
-					<a href="https://ocdaction.org.uk/"
-					   target="_blank"
-					   rel="noopener noreferrer
-					   ">
-						<Image src="/ocd.svg" alt="OCD" width={200} height={200}/>
-					</a>
-				</div>
-
-				{/* Information */}
-				<div className="text-center sm:text-left">
-					<p className="text-xl font-bold font-serif">
-						OCD Action
-					</p>
-					<p>Open Monday to Friday 09:00-17:00</p>
-					<p><strong>Helpline: </strong>
-						<a href="tel: 0300 636 5478"
-						   className="text-blue-400 hover:text-blue-900">
-							0300 636 5478
-						</a>
-					</p>
-					<p><strong>Email:</strong> <a
-						href="mailto:support@ocdaction.org.uk"
-						className="text-blue-400 hover:text-blue-800">support@ocdaction.org.uk</a>
-					</p>
-				</div>
-			</div>
-
-			<div className="DERBYCITYCOUNCILTAB
-			flex
-			flex-col
-			sm:flex-row
-			items-center
-			p-2 rounded-xl
-			shadow
-			space-y-4
-			sm:space-y-0
-			sm:space-x-4
-			bg-green-900
-			mx-1
-			">
-				{/* Icon */}
-				<div className="
-				flex-shrink-0
-				transition
-                ease-in-out
-                delay-150
-                duration-150
-				hover:-translate-y-1
-				hover:scale-110
-				">
-					<a href="https://www.derby.gov.uk/health-and-social-care/mental-health-wellbeing-support/support-for-adults/mental-health-support/#"
-					   target="_blank"
-					   rel="noopener noreferrer
-					   ">
-						<Image src="/Derby.png" alt="Derby City Council" width={200} height={200}/>
-					</a>
-				</div>
-
-				{/* Information */}
-				<div className="text-center sm:text-left">
-					<p className="text-xl font-bold font-serif">
-						Derby City Council (Relate services)
-					</p>
-					<p>Open Monday, Tuesdays and Thursdays 10am -1pm.</p>
-					<p><strong>Relate helpline: </strong>
-						<a href="tel: 0808 178 9363"
-						   className="text-blue-400 hover:text-blue-900">
-							0808 178 9363
-						</a>
-					</p>
-					<p><strong>Relate trained counsellor: </strong>
-						<a href="tel: 01332 349177"
-						   className="text-blue-400 hover:text-blue-900">
-							01332 349177
-						</a>
-						<span> or </span>
-						<a href="tel: 07741 193484"
-						   className="text-blue-400 hover:text-blue-900">
-							07741 193484
-						</a>
-					</p>
-					<p><strong>Email:</strong> <a
-						href="mailto:info@relatederby.org.uk"
-						className="text-blue-400 hover:text-blue-800"> info@relatederby.org.uk</a>
-					</p>
-				</div>
-			</div>
-
-			<div className="CALMTAB
-			flex
-			flex-col
-			sm:flex-row
-			items-center
-			p-2
-			rounded-xl
-			shadow
-			space-y-4
-			sm:space-y-0
-			sm:space-x-4
-			bg-green-900
-			mx-1
-			">
-				{/* Icon */}
-				<div className="
-				flex-shrink-0
-				transition
-                ease-in-out
-                delay-150
-                duration-150
-				hover:-translate-y-1
-				hover:scale-110
-				">
-					<a href="https://www.thecalmzone.net/"
-					   target="_blank"
-					   rel="noopener noreferrer
-					   ">
-						<Image src="/calm.svg" alt="CALM" width={200} height={200}/>
-					</a>
-				</div>
-
-				{/* Information */}
-				<div className="text-center sm:text-left">
-					<p className="text-xl font-bold font-serif">
-						CALM
-					</p>
-					<p>Open 5pm–midnight, 365 days a year.</p>
-					<p><strong>Helpline: </strong>
-						<a href="tel: 0808 58 58 58"
-						   className="text-blue-400 hover:text-blue-900">
-							0808 58 58 58
-						</a>
-					</p>
-					<p><strong>Website:</strong> <a
-						href="https://www.thecalmzone.net/get-support"
-						className="text-blue-400 hover:text-blue-800">www.thecalmzone.net</a>
-					</p>
-				</div>
-			</div>
-
-			<div className="SANETAB
-			flex
-			flex-col
-			sm:flex-row
-			items-center
-			p-2 rounded-xl
-			shadow
-			space-y-4
-			sm:space-y-0
-			sm:space-x-4
-			bg-gradient-to-b
-			from-blue-200
-			via-blue-300
-			to-blue-600
-			mx-1
-			">
-				{/* Icon */}
-				<div className="
-				flex-shrink-0
-				transition
-                ease-in-out
-                delay-150
-                duration-150
-				hover:-translate-y-1
-				hover:scale-110
-				">
-					<a href="https://www.sane.org.uk/how-we-help/emotional-support/saneline-services"
-					   target="_blank"
-					   rel="noopener noreferrer
-					   ">
-						<Image src="/Sane.svg" alt="OCD" width={200} height={150}/>
-					</a>
-				</div>
-
-				{/* Information */}
-				<div className="text-center sm:text-left">
-					<p className="text-xl font-bold font-serif">
-						SANE
-					</p>
-					<p>We are normally open every day of the year from 4pm to 10pm</p>
-					<p><strong>Helpline: </strong>
-						<a href="tel: 0300 304 7000"
-						   className="text-blue-400 hover:text-blue-900">
-							0300 304 7000
-						</a>
-					</p>
-					<p><strong>Email:</strong> <a
-						href="mailto: support@sane.org.uk"
-						className="text-blue-400 hover:text-blue-800"> support@sane.org.uk</a>
-					</p>
-					<p>
-						We reply to each email individually, and normally are able to respond within 72 hours.
-					</p>
-					<p><strong>Website:</strong> <a
-						href="https://www.sane.org.uk/how-we-help/emotional-support"
-						className="text-blue-400 hover:text-blue-800">www.sane.org.uk</a>
-					</p>
-					<p><strong>Resquest textcare:</strong> <a
-						href="https://form.jotform.com/221004693319350"
-						className="text-blue-400 hover:text-blue-800">www.sane.org.uk</a>
-					</p>
-					<p>
-						Textcare is not a crisis service.
-					</p>
-				</div>
-			</div>
-
-			<div>
-				<h1>
-					More to come...
-				</h1>
-			</div>
-
-		</div>
-	);
+    </div>
+  );
 }
-
-// Path: app/help/page.js

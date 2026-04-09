@@ -2,61 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --ss-cream: #F8F4EE;
+    --ss-warm-white: #FDFCF8;
+    --ss-ink: #2C2825;
+    --ss-ink-soft: #8B7D74;
+    --ss-sage: #7BA694;
+    --ss-teal: #5B9AA0;
+    --ss-amber: #C4936D;
+    --ss-violet: #9B82C8;
+  }
+
+  body {
+    background-color: var(--ss-cream);
+    color: var(--ss-ink);
+    font-family: var(--font-nunito), system-ui, sans-serif;
+    margin: 0;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-cormorant), Georgia, serif;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  margin: 0;
+/* ── Breathing animation (hero orb) ───────────────────────── */
+@keyframes breathe {
+  0%, 100% { transform: scale(1);    opacity: 0.18; }
+  50%       { transform: scale(1.2); opacity: 0.32; }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-/* globals.css */
-.neomorphic-btn {
-  background-color: #e0e0e0; /* Darker shade for better contrast */
-  border: none;
-  outline: none;
-  cursor: pointer;
-  box-shadow: 8px 8px 15px #a7a7a7, /* Adjusted for more depth */
-              -8px -8px 15px #ffffff;
-  transition: all 0.3s ease;
+@keyframes breathe-slow {
+  0%, 100% { transform: scale(1);    opacity: 0.12; }
+  50%       { transform: scale(1.28); opacity: 0.24; }
 }
 
-.neomorphic-btn:hover {
-  background-color: #d1d1d1; /* Slightly darker on hover for depth */
-  box-shadow: 0px 0px 15px #a7a7a7, /* Subtler shadow on hover */
-              0px 0px 15px #ffffff;
-  transform: translateY(-5px); /* Lift effect on hover */
-  animation: hue-rotate 1s infinite linear;
+.animate-breathe       { animation: breathe      5s ease-in-out infinite; }
+.animate-breathe-slow  { animation: breathe-slow 7s ease-in-out infinite; }
+
+/* ── Staggered entrance animations ───────────────────────── */
+.anim-float-up {
+  opacity: 0;
+  animation: floatUp 0.7s ease-out forwards;
 }
 
-@keyframes hue-rotate {
-  from {
-    filter: hue-rotate(0deg);
+@keyframes floatUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.delay-100 { animation-delay: 0.10s; }
+.delay-200 { animation-delay: 0.20s; }
+.delay-300 { animation-delay: 0.30s; }
+.delay-400 { animation-delay: 0.40s; }
+.delay-500 { animation-delay: 0.50s; }
+.delay-600 { animation-delay: 0.60s; }
+.delay-700 { animation-delay: 0.70s; }
+.delay-800 { animation-delay: 0.80s; }
+
+/* ── Triage card hover effect ─────────────────────────────── */
+.triage-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.triage-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(44, 40, 37, 0.12);
+}
+
+/* ── Questionnaire progress bar ───────────────────────────── */
+.progress-fill {
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Support page benefits panel ──────────────────────────── */
+.benefits-panel {
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+/* ── Reduced-motion accessibility guard ──────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-breathe,
+  .animate-breathe-slow,
+  .anim-float-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
-  to {
-    filter: hue-rotate(-360deg);
-  }
+}
+
+/* ── Responsive video wrapper ─────────────────────────────── */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
 }

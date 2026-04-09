@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Help from './body/Help';
 
-export default function help() {
+export default function HelpPage() {
 	return (
 		<div className="flex flex-col min-h-screen">
 			<Header />

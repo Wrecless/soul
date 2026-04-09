@@ -1,91 +1,55 @@
-"use client";
+'use client';
 
-import React, {useState} from 'react';
 import Tab from '../components/Tab';
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
+import Header from '@/app/components/Header';
+import Footer from '@/app/components/Footer';
+import BenefitsPanel from '../components/BenefitsPanel';
 
 export default function SoundTherapy() {
-	// Define your sound therapy videos as objects with id and name properties
-	const videosForRelaxation = [
-		{ id: 'buqt6_CjtuI', name: 'Relaxing Nature Sounds' },
-		{ id: 'WPni755-Krg', name: 'Study Music Alpha Waves' },
-		{ id: 'prfZFyp4XZk', name: 'Sounds of the Sea • Deep Underwater' }
-	];
-	const videosForSleep = [
-		{ id: 'YB-nFu50R1M', name: 'Reduces Stress, Anxiety and Calm The Mind' },
-		{ id: 'WCuZRbHER0g', name: 'Release Anxiety & Tension' }
-	];
-	const videosForFocus = [
-		{ id: 'xsfyb1pStdw', name: 'Binaural Beats for Concentration' },
-		{ id: 'Z8ANihFXlgU', name: 'Ambient Study Music' }
-	];
+  const videosForRelaxation = [
+    { id: 'buqt6_CjtuI', name: 'Relaxing Nature Sounds' },
+    { id: 'WPni755-Krg', name: 'Study Music Alpha Waves' },
+    { id: 'prfZFyp4XZk', name: 'Sounds of the Sea — Deep Underwater' },
+  ];
+  const videosForSleep = [
+    { id: 'YB-nFu50R1M', name: 'Reduces Stress, Anxiety & Calms the Mind' },
+    { id: 'WCuZRbHER0g', name: 'Release Anxiety & Tension' },
+  ];
+  const videosForFocus = [
+    { id: 'xsfyb1pStdw', name: 'Binaural Beats for Concentration' },
+    { id: 'Z8ANihFXlgU', name: 'Ambient Study Music' },
+  ];
 
-	const [isVisible, setIsVisible] = useState(false);
-	const toggleVisibility = () => {
-		setIsVisible(!isVisible);
-	};
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
 
-	return (
-		<div>
-			<Header />
-			<div className="SOUND_THERAPY
-			bg-gradient-to-r
-			from-purple-400
-			via-purple-500
-			to-purple-600
-			">
-				<div className="
-				text-center
-				items-center
-				backdrop-blur-sm
-				bg-white/20
-				shadow-2xl
-				rounded-3xl
-				pt-3
-				mx-8
-				">
-					<button
-						className="
-						text-2xl
-						font-bold
-						decoration-solid
-						mb-4
-						px-6
-						py-3
-						"
-						onClick={toggleVisibility}
-					>
-						Benefits of Sound Therapy ⤵
-					</button>
+      <div className="flex-1" style={{ background: 'linear-gradient(135deg, #DDD4F0 0%, #9B82C8 55%, #7355A8 100%)' }}>
 
-					{isVisible && (
-						<div>
-							<p>
-								<strong>Relaxation and Stress Relief:</strong> Sound therapy uses soothing sounds to promote relaxation and reduce stress.
-							</p>
-							<p>
-								<strong>Enhanced Sleep Quality:</strong> Certain sounds can help synchronize brain waves for better sleep.
-							</p>
-							<p>
-								<strong>Improved Focus and Concentration:</strong> Ambient or natural sounds can enhance cognitive functions and concentration.
-							</p>
-							<p>
-								<strong>Emotional Balance:</strong> It can play a role in managing emotions and mood swings.
-							</p>
-							<p>
-								<strong>Physical Healing:</strong> Some studies suggest that sound therapy can aid in pain relief and healing.
-							</p>
-						</div>
-					)}
-				</div>
+        <div className="text-center pt-10 pb-4 px-6">
+          <p className="font-body text-xs tracking-widest uppercase text-purple-950/40 mb-2">Support</p>
+          <h1 className="font-display text-5xl md:text-6xl font-light text-purple-950/80 mb-2">
+            Sound Therapy
+          </h1>
+          <p className="text-purple-900/60 font-body text-base max-w-md mx-auto">
+            Sound has a profound effect on the nervous system. These curated tracks and frequencies help you relax, focus, and sleep.
+          </p>
+        </div>
 
-				<Tab videos={videosForRelaxation} title="For studying"/>
-				<Tab videos={videosForSleep} title="Stress relief"/>
-				<Tab videos={videosForFocus} title="Binaural Beats"/>
-			</div>
+        <BenefitsPanel title="Benefits of Sound Therapy" accentClass="text-purple-950/70">
+          <p><strong>Relaxation and stress relief:</strong> Soothing sounds promote relaxation and reduce the physiological stress response.</p>
+          <p><strong>Enhanced sleep quality:</strong> Certain frequencies synchronise brain waves to support deeper, more restorative sleep.</p>
+          <p><strong>Improved focus and concentration:</strong> Ambient sound has been shown to enhance cognitive performance and reduce distraction.</p>
+          <p><strong>Emotional balance:</strong> Sound therapy can gently regulate mood and reduce emotional volatility.</p>
+          <p><strong>Physical healing:</strong> Some studies suggest sound therapy supports pain relief and recovery.</p>
+        </BenefitsPanel>
 
-			<Footer/>
-		</div>
-	);
+        <Tab videos={videosForRelaxation} title="Nature & Ambience" titleClass="text-purple-950/60" />
+        <Tab videos={videosForSleep}      title="Stress Relief"      titleClass="text-purple-950/60" />
+        <Tab videos={videosForFocus}      title="Binaural Beats"     titleClass="text-purple-950/60" />
+      </div>
+
+      <Footer />
+    </div>
+  );
 }
