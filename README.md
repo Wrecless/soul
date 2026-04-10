@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SoulSupport
+
+SoulSupport is a personal project I built after completing my BSc Computer Science degree at the University of Derby.
+
+I built it as a calm, practical mental wellbeing website for people who need quick support, gentle guidance, or direct access to UK helplines. I wanted the experience to feel steady and reassuring rather than loud or overwhelming, so I focused on simple navigation, soft visual language, and content that is easy to act on when someone is already under stress.
+
+## About Me
+
+I’m a computer science graduate who enjoys building thoughtful, human-centred software. I care most about clarity, accessibility, and making interfaces that feel considered rather than generic. This project reflects the kind of work I want to keep doing: useful, calm, and respectful software that solves a real problem without adding noise.
+
+I also wanted SoulSupport to show how I approach design and development together. For me, the detail matters just as much as the feature set. The layout, typography, wording, and interaction flow all matter because they shape how safe and usable the site feels.
+
+## What SoulSupport Includes
+
+- A homepage with guided triage into the most relevant support area
+- A short 4-question PHQ-4 wellbeing check-in
+- A results page with tailored resource suggestions
+- A UK helplines page for urgent support
+- Support pages for breathing, meditation, movement, sound therapy, and sleep
+- Consistent branding, calm visual design, and reduced-motion support
+
+## Tech Stack
+
+- Next.js 14
+- React 18
+- Tailwind CSS
+- Google Fonts
+- Font Awesome
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+cd website
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `npm run dev` - start the development server
+- `npm run build` - create a production build
+- `npm run start` - run the production server
+- `npm run lint` - run ESLint
 
-## Learn More
+## Notes
 
-To learn more about Next.js, take a look at the following resources:
+- This project is designed as a supportive, informational resource, not a medical service.
+- The questionnaire is for reflection only and does not provide a diagnosis.
+- Crisis support and helpline information should be checked carefully before release.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Purpose
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+I wanted to create something that felt calm, direct, and respectful to the user. The goal was to make it easy to find the right kind of support quickly, without adding noise or unnecessary complexity.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+More personally, I wanted this project to demonstrate the kind of developer I am becoming: someone who cares about the end user, pays attention to details, and is willing to refine the small things that make a product feel trustworthy.
