@@ -67,20 +67,23 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-cream font-body">
+    <div className="flex flex-col min-h-screen font-body">
       <Header />
 
       <main id="main-content">
 
         {/* ── HERO ────────────────────────────────────────── */}
-        <section className="relative overflow-hidden flex flex-col items-center justify-center text-center px-6 py-20 md:py-32 bg-cream">
+        <section className="relative overflow-hidden flex flex-col items-center justify-center text-center px-6 py-20 md:py-32">
 
           {/* Breathing orbs */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none" aria-hidden="true">
-            <div className="w-[560px] h-[560px] rounded-full bg-sage animate-breathe" />
+            <div className="w-[640px] h-[640px] rounded-full bg-sage animate-breathe" />
           </div>
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none" aria-hidden="true">
-            <div className="w-[380px] h-[380px] rounded-full bg-teal animate-breathe-slow" />
+            <div className="w-[420px] h-[420px] rounded-full bg-teal animate-breathe-slow" />
+          </div>
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none" aria-hidden="true">
+            <div className="w-[260px] h-[260px] rounded-full bg-amber animate-breathe-ambient" />
           </div>
 
           {/* Text */}

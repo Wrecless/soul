@@ -29,7 +29,7 @@ export default function BreathingExercises() {
     { id: 'nzCaZQqAs9I', name: 'Wim Hof Explains the Technique' },
   ];
   const videosPranayama = [
-    { id: 'i3f6m7m9GWQ', name: 'Alternate Nostril Breathing' },
+    { id: 't0r_ss_Cq6g', name: 'Alternate Nostril Breathing' },
     { id: 'bF_1ZiFta-E', name: 'Box Breathing' },
   ];
 

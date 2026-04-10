@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --ss-cream: #E2D9CE;
-    --ss-warm-white: #EDE8DF;
+    --ss-cream: #D4C9B8;
+    --ss-warm-white: #E2D8CA;
     --ss-ink: #2C2825;
     --ss-ink-soft: #8B7D74;
     --ss-sage: #7BA694;
@@ -16,6 +16,13 @@
 
   body {
     background-color: var(--ss-cream);
+    /* Atmospheric gradient mesh — fixed so it doesn't scroll */
+    background-image:
+      radial-gradient(ellipse 90% 70% at 8% 8%,   rgba(123, 166, 148, 0.28) 0%, transparent 55%),
+      radial-gradient(ellipse 80% 60% at 92% 92%,  rgba(196, 147, 109, 0.22) 0%, transparent 55%),
+      radial-gradient(ellipse 65% 80% at 82% 12%,  rgba(91,  154, 160, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse 55% 55% at 25% 78%,  rgba(155, 130, 200, 0.10) 0%, transparent 48%);
+    background-attachment: fixed;
     color: var(--ss-ink);
     font-family: var(--font-nunito), system-ui, sans-serif;
     margin: 0;
@@ -26,19 +33,37 @@
   }
 }
 
-/* ── Breathing animation (hero orb) ───────────────────────── */
+/* ── Grain texture overlay (applied via layout div) ────────── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  background-repeat: repeat;
+}
+
+/* ── Breathing animation (hero orbs) ───────────────────────── */
 @keyframes breathe {
-  0%, 100% { transform: scale(1);    opacity: 0.18; }
-  50%       { transform: scale(1.2); opacity: 0.32; }
+  0%, 100% { transform: scale(1);    opacity: 0.26; }
+  50%       { transform: scale(1.22); opacity: 0.44; }
 }
 
 @keyframes breathe-slow {
-  0%, 100% { transform: scale(1);    opacity: 0.12; }
-  50%       { transform: scale(1.28); opacity: 0.24; }
+  0%, 100% { transform: scale(1);    opacity: 0.18; }
+  50%       { transform: scale(1.30); opacity: 0.34; }
 }
 
-.animate-breathe       { animation: breathe      5s ease-in-out infinite; }
-.animate-breathe-slow  { animation: breathe-slow 7s ease-in-out infinite; }
+@keyframes breathe-ambient {
+  0%, 100% { transform: scale(1);    opacity: 0.10; }
+  50%       { transform: scale(1.15); opacity: 0.20; }
+}
+
+.animate-breathe         { animation: breathe         5s ease-in-out infinite; }
+.animate-breathe-slow    { animation: breathe-slow    7s ease-in-out infinite; }
+.animate-breathe-ambient { animation: breathe-ambient 9s ease-in-out infinite; }
 
 /* ── Staggered entrance animations ───────────────────────── */
 .anim-float-up {
@@ -65,8 +90,8 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .triage-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(44, 40, 37, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(44, 40, 37, 0.14);
 }
 
 /* ── Questionnaire progress bar ───────────────────────────── */
@@ -83,6 +108,7 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-breathe,
   .animate-breathe-slow,
+  .animate-breathe-ambient,
   .anim-float-up {
     animation: none;
     opacity: 1;

@@ -26,11 +26,11 @@ export default function GuidedMeditation() {
   const videosStress = [
     { id: 'gqy8mmwDZk8', name: 'Feeling Overwhelmed' },
     { id: 'syx3a1_LeFo', name: 'Letting Go' },
-    { id: 'O-6f5wRmZoU', name: 'Body Scan for Sleep' },
+    { id: 'HMOfD3VSbQ4', name: 'Body Scan for Sleep' },
   ];
   const videosBodyScan = [
-    { id: 'v9v_bQ8iCVk', name: 'Full Body Scan Relaxation' },
-    { id: 'bP6lQ8JQx0k', name: 'Progressive Muscle Relaxation' },
+    { id: 'AeOXCgF4S0s', name: 'Full Body Scan Relaxation' },
+    { id: '_1h-zizAGsc', name: 'Progressive Muscle Relaxation' },
   ];
 
   return (

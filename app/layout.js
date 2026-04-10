@@ -35,6 +35,8 @@ export default function RootLayout({ children }) {
         >
           Skip to main content
         </a>
+        {/* Grain texture — decorative overlay, non-interactive */}
+        <div className="grain-overlay" aria-hidden="true" />
         {children}
       </body>
     </html>

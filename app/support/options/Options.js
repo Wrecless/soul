@@ -51,7 +51,7 @@ const options = [
 
 export default function SupportOptions() {
   return (
-    <main id="main-content" className="flex-1 bg-cream px-6 py-14">
+    <main id="main-content" className="flex-1 px-6 py-14">
       <div className="max-w-5xl mx-auto">
 
         {/* Intro */}

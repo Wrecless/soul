@@ -27,11 +27,7 @@ export default function SoundTherapy() {
   const videosFocus = [
     { id: 'xsfyb1pStdw', name: 'Binaural Beats for Concentration' },
     { id: 'Z8ANihFXlgU', name: 'Ambient Study Music' },
-    { id: '3wP2sB2e4lE', name: '528Hz Healing Frequency' },
-  ];
-  const videosSleepSounds = [
-    { id: '5c_w7kC_t4U', name: 'Rain Sounds for Deep Sleep' },
-    { id: '3tSl4r1uXoE', name: 'Delta Waves for Deep Sleep' },
+    { id: 'SNR8GVF8-xM', name: '528Hz Healing Frequency' },
   ];
 
   return (
@@ -55,7 +51,6 @@ export default function SoundTherapy() {
         <Tab videos={videosAmbience}     title="Nature & Ambience" titleClass="text-purple-950/60" />
         <Tab videos={videosStressRelief} title="Stress Relief"     titleClass="text-purple-950/60" />
         <Tab videos={videosFocus}        title="Binaural Beats"    titleClass="text-purple-950/60" />
-        <Tab videos={videosSleepSounds}  title="Sleep Sounds"      titleClass="text-purple-950/60" />
       </main>
 
       <Footer />
